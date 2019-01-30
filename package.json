@@ -8,6 +8,7 @@
   "main": "index.js",
   "scripts": {
     "serve": "vue-cli-service serve ./src/demo/demo.js",
+    "build-demo": "vue-cli-service build ./src/demo/demo.js --dest docs",
     "build": "vue-cli-service build --target lib --name VueRssFeed ./src/VueRssFeed.vue",
     "lint": "vue-cli-service lint"
   },
