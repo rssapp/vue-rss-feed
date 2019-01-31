@@ -46,6 +46,6 @@ Then use it in your template
 | --------------- | -------------------------------- | ---------- | ---------------------------------------------------------------------- |
 | feedUrl           | String                           |        | RSS Feed URL                                                           |
 | limit          | Number                           | 5      | Number of items to render                                                          |
-| Name           | String                          |        | Pass a name to show instead of feed title                                                     |
+| Name           | String                          |        | Pass a name to replace feed title                                                     |
 
 
