@@ -49,3 +49,7 @@ Then use it in your template
 | Name           | String                          |        | Pass a name to replace feed title                                                     |
 
 
+
+# License
+
+MIT
