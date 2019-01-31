@@ -1,31 +1,55 @@
 # vue-rss-feed
+A simple componenet to embed beautiful RSS feeds with Vuejs
 
-## Project setup
+## Demo
+[demo](https://rssapp.github.io/vue-rss-feed/)
 
-```
-npm install
-```
+## Install
 
-### Compiles and hot-reloads for development
-
-```
-npm run serve
+```bash
+npm i vue-rss-feed
 ```
 
-### Compiles and minifies for production
+## Usage
+Import VueRssFeed in your component
 
-```
-npm run build
+```js
+import VueRssFeed from "../VueRssFeed.vue";
+...
+export default {
+  name: "Demo",
+  components: {
+    VueRssFeed
+  },
+  data() {
+    return {
+      feedUrl: "https://rss.app/feeds/hmsyAr3PyniBpmOd.xml",
+      name: "",
+      limit: 5,      
+    };
+  },
+};
 ```
 
-### Run your tests
+Then use it in the template
 
-```
-npm run test
+```HTML
+<template>
+...
+<div>
+  <VueRssFeed :feedUrl="feedUrl" :name="name" :limit="limit"/>
+</div>
+...  
+</template>  
 ```
 
-### Lints and fixes files
+## Props
 
-```
-npm run lint
-```
+
+| name            | type                             | default    | description                                                            |
+| --------------- | -------------------------------- | ---------- | ---------------------------------------------------------------------- |
+| feedUrl           | String                           |        | RSS Feed URL                                                           |
+| limit          | Number                           | 5      | Number of items to render                                                          |
+| Name           | String                          |        | Pass a name to show instead of feed title                                                     |
+
+
