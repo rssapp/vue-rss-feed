@@ -1,6 +1,6 @@
 {
   "name": "vue-rss-feed",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "A simple componenet to embed beautiful RSS feeds with Vuejs",
   "keywords": [
     "RSS",
@@ -10,6 +10,14 @@
     "News Feed"
   ],
   "license": "MIT",
+  "homepage": "https://rss.app",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/RSSapp/vue-rss-feed"
+  },
+  "bugs": {
+    "url": "https://github.com/RSSapp/vue-rss-feed/issues"
+  },
   "private": false,
   "author": {
     "name": "Max S."
