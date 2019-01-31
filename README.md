@@ -31,14 +31,12 @@ export default {
 };
 ```
 
-Then use it in the template
+Then use it in your template
 
 ```HTML
 <template>
 ...
-<div>
-  <VueRssFeed :feedUrl="feedUrl" :name="name" :limit="limit"/>
-</div>
+ <VueRssFeed :feedUrl="feedUrl" :name="name" :limit="limit"/>
 ...  
 </template>  
 ```
