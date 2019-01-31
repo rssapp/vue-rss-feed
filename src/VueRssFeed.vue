@@ -1,6 +1,6 @@
 <template>
   <div class="vue-rss-feed">
-    <Feed :feedUrl="feedUrl" :name="name" :limit="limit" :loadMore="loadMore"/>
+    <Feed :feedUrl="feedUrl" :name="name" :limit="limit"/>
   </div>
 </template>
 
@@ -15,8 +15,7 @@ export default {
   props: {
     feedUrl: String,
     name: String,
-    limit: Number,
-    loadMore: Boolean
+    limit: Number
   }
 };
 </script>

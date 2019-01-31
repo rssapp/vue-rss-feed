@@ -20,7 +20,7 @@
       <el-row>
         <el-col :span="12">
           <div class="preview-vue-rss-feed">
-            <VueRssFeed :feedUrl="feedUrl" :name="name" :limit="limit" :loadMore="loadMore"/>
+            <VueRssFeed :feedUrl="feedUrl" :name="name" :limit="limit"/>
           </div>
         </el-col>
         <el-col :span="12">
@@ -60,7 +60,6 @@ export default {
       feedUrl: "https://rss.app/feeds/hmsyAr3PyniBpmOd.xml",
       name: "",
       limit: 5,
-      loadMore: false,
       rssFeedForm: {
         feedUrl: "https://rss.app/feeds/hmsyAr3PyniBpmOd.xml"
       }
