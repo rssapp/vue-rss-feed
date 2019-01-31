@@ -1,6 +1,15 @@
 {
   "name": "vue-rss-feed",
-  "version": "0.2.0",
+  "version": "0.2.1",
+  "description": "A simple componenet to embed beautiful RSS feeds with Vuejs",
+  "keywords": [
+    "RSS",
+    "Embed",
+    "RSS Feeds",
+    "VueJS",
+    "News Feed"
+  ],
+  "license": "MIT",
   "private": false,
   "author": {
     "name": "Max S."
