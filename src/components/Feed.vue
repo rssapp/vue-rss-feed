@@ -76,7 +76,11 @@ export default {
           this.loading = false;
         }
       } catch (e) {
-        this.error = e.toString();
+        if (e.toString() === "TypeError: Failed to fetch") {
+          this.error = "Error due to CORS policy";
+        } else {
+          this.error = e.toString();
+        }
         this.loading = false;
       }
     },
