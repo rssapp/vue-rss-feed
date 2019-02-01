@@ -2,7 +2,7 @@
 A simple component to embed beautiful RSS feeds with Vuejs
 
 ## Demo
-![](demo.png)
+![](vue-rss-feed-demo.gif)
 
 
 [demo](https://rssapp.github.io/vue-rss-feed/)
