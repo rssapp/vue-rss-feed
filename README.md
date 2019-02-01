@@ -48,8 +48,12 @@ Then use it in your template
 | limit   | Number | 5       | Number of items to render         |
 | Name    | String |         | Pass a name to replace feed title |
 
+## Note
+
+Due to CORS policy some RSS feeds can't be loaded in the browser.
+You can load RSS feeds from your own server to get around this.
 
 
-# License
+## License
 
 MIT
