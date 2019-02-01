@@ -1,5 +1,5 @@
 # vue-rss-feed
-A simple componenet to embed beautiful RSS feeds with Vuejs
+A simple component to embed beautiful RSS feeds with Vuejs
 
 ## Demo
 [demo](https://rssapp.github.io/vue-rss-feed/)
@@ -25,7 +25,7 @@ export default {
     return {
       feedUrl: "https://rss.app/feeds/hmsyAr3PyniBpmOd.xml",
       name: "",
-      limit: 5,      
+      limit: 5,
     };
   },
 };
@@ -36,17 +36,17 @@ Then use it in your template
 ```HTML
 <template>
  <VueRssFeed :feedUrl="feedUrl" :name="name" :limit="limit"/>
-</template>  
+</template>
 ```
 
 ## Props
 
 
-| name            | type                             | default    | description                                                            |
-| --------------- | -------------------------------- | ---------- | ---------------------------------------------------------------------- |
-| feedUrl           | String                           |        | RSS Feed URL                                                           |
-| limit          | Number                           | 5      | Number of items to render                                                          |
-| Name           | String                          |        | Pass a name to replace feed title                                                     |
+| name    | type   | default | description                       |
+| ------- | ------ | ------- | --------------------------------- |
+| feedUrl | String |         | RSS Feed URL                      |
+| limit   | Number | 5       | Number of items to render         |
+| Name    | String |         | Pass a name to replace feed title |
 
 
 

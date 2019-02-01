@@ -1,7 +1,7 @@
 {
   "name": "vue-rss-feed",
-  "version": "0.2.2",
-  "description": "A simple componenet to embed beautiful RSS feeds with Vuejs",
+  "version": "0.2.3",
+  "description": "A simple component to embed beautiful RSS feeds with Vuejs",
   "keywords": [
     "RSS",
     "Embed",
