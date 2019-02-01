@@ -13,7 +13,7 @@
             <h1>vue-rss-feed demo</h1>
           </div>
         </el-col>
-        <el-col :span="8"></el-col>
+        <el-col :span="8" class="github-button"></el-col>
       </el-row>
     </el-header>
     <el-main>
@@ -39,6 +39,47 @@
               <el-button type="primary" @click="submitForm('rssFeedForm')">Submit</el-button>
             </el-form-item>
           </el-form>
+
+          <el-row>
+            <div class="scroll-down">
+              <span>Scroll down to load more</span>
+              <i class="el-icon-arrow-down"></i>
+            </div>
+          </el-row>
+
+          <div class="examples">
+            <h3>Examples</h3>
+            <ul>
+              <li>
+                <a
+                  href="https://rss.app/feeds/hmsyAr3PyniBpmOd.xml"
+                  @click="loadExample"
+                >CNN Politics</a>
+              </li>
+              <li>
+                <a
+                  href="https://rss.app/feeds/TYNzLiPKDRnSuxr7.xml"
+                  @click="loadExample"
+                >NPR: Arts & life</a>
+              </li>
+              <li>
+                <a
+                  href="https://rss.app/feeds/feHQ6ZmAWxS0zjj6.xml"
+                  @click="loadExample"
+                >YouTube: PewDiePie</a>
+              </li>
+              <li>
+                <a
+                  href="https://rss.app/feeds/YxkSC62K6JgmWxq6.xml"
+                  @click="loadExample"
+                >Google news: Bitcoin</a>
+              </li>
+            </ul>
+          </div>
+          <el-row class="powered-rss-app">
+            Powered by
+            <a href="https://rss.app">RSS.app</a>
+          </el-row>
         </el-col>
       </el-row>
     </el-main>
@@ -59,7 +100,7 @@ export default {
     return {
       feedUrl: "https://rss.app/feeds/hmsyAr3PyniBpmOd.xml",
       name: "",
-      limit: 5,
+      limit: 4,
       rssFeedForm: {
         feedUrl: "https://rss.app/feeds/hmsyAr3PyniBpmOd.xml"
       }
@@ -90,6 +131,11 @@ export default {
     },
     increaseLimit(loadMore = 5) {
       this.limit += loadMore;
+    },
+    loadExample(evt) {
+      evt.preventDefault();
+      this.rssFeedForm.feedUrl = evt.toElement.href;
+      this.feedUrl = evt.toElement.href;
     }
   },
   watch: {
@@ -132,6 +178,45 @@ body {
   border-color: #ff641b;
   opacity: 0.9;
 }
+.scroll-down {
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  margin-top: -10px;
+}
+
+.el-icon-arrow-down {
+  font-size: 35px;
+}
+
+.examples h3 {
+  color: #2c3e50;
+  font-weight: normal;
+  margin: 0;
+}
+
+.examples ul {
+  margin: 10px;
+}
+
+.examples li {
+  margin-bottom: 5px;
+}
+
+.examples a {
+  color: #ff641b;
+  margin-bottom: 5px;
+}
+
+a {
+  color: #ff641b;
+}
+
+.powered-rss-app {
+  margin-top: 20px;
+  font-size: 13px;
+  /* color: #ff641b; */
+}
 
 .el-header h1 {
   margin: 0;
@@ -162,8 +247,11 @@ body {
 
 .el-form--label-top .el-form-item__label {
   font-size: 20px;
-  /* font-weight: bold; */
   color: #2c3e50;
   padding-bottom: 0;
+}
+
+.github-button {
+  text-align: right;
 }
 </style>
