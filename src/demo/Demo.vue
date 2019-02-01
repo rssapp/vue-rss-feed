@@ -43,7 +43,14 @@
           <el-row>
             <div class="scroll-down">
               <span>Scroll down to load more</span>
-              <i class="el-icon-arrow-down"></i>
+              <span class="icon-down">
+                <svg style="width:30px;height:30px" viewBox="0 0 30 30">
+                  <path
+                    fill="#2c3e50"
+                    d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"
+                  ></path>
+                </svg>
+              </span>
             </div>
           </el-row>
 
