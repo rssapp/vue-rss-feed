@@ -54,7 +54,7 @@ Then use it in your template
 ## Note
 
 Due to CORS policy some RSS feeds can't be loaded in the browser.
-You can load RSS feeds from your own server to get around this.
+You can load RSS feeds from your own server or use [RSS.app](https://rss.app).
 
 
 ## License
