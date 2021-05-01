@@ -1,8 +1,8 @@
 <template>
-  <div v-if="error" class="error">{{error}}</div>
+  <div v-if="error" class="error">{{ error }}</div>
   <div v-else class="feed">
-    <h1 v-if="name">{{name}}</h1>
-    <h1 v-else>{{feed.title}}</h1>
+    <h1 v-if="name">{{ name }}</h1>
+    <h1 v-else>{{ feed.title }}</h1>
     <div v-if="loading" class="spinner">
       <div class="bounce1"></div>
       <div class="bounce2"></div>
@@ -25,19 +25,20 @@ import RSSParser from "rss-parser";
 export default {
   name: "Feed",
   components: {
-    Article
+    Article,
   },
   props: {
     feedUrl: String,
     name: String,
     limit: Number,
-    loadMore: Boolean
+    loadMore: Boolean,
   },
   data() {
     return {
       loading: true,
+      bypass_with_rssjson: false, // If you RSS feed source throws CORS than try enabling this. 
       error: "",
-      feed: {}
+      feed: {},
     };
   },
   created() {
@@ -51,7 +52,7 @@ export default {
       if (newVal !== oldVal) {
         this.getArticles();
       }
-    }
+    },
   },
   methods: {
     async fetchData() {
@@ -59,21 +60,36 @@ export default {
       this.loading = true;
       this.feed = {};
       try {
-        const data = await fetch(this.feedUrl);
-        if (data.ok) {
-          const text = await data.text();
-          const parser = new RSSParser();
-          parser.parseString(text, (err, parsed) => {
+        if (bypass_with_rssjson) { 
+          const data = await fetch(
+            "https://api.rss2json.com/v1/api.json?rss_url=" + this.feedUrl
+          );
+          if (data.ok) {
+            const text = await data.text();
+            const parser = JSON.parse(text);
+            this.feed = parser;
+            this.feed.title = parser.feed.title;
+          } else {
+            this.error = "Error occured while fetching the feed";
             this.loading = false;
-            if (err) {
-              this.error = `Error occured while parsing RSS Feed ${err.toString()}`;
-            } else {
-              this.feed = parsed;
-            }
-          });
+          }
         } else {
-          this.error = "Error occured while fetching the feed";
-          this.loading = false;
+          const data = await fetch(this.feedUrl);
+          if (data.ok) {
+            const text = await data.text();
+            const parser = new RSSParser();
+            parser.parseString(text, (err, parsed) => {
+              this.loading = false;
+              if (err) {
+                this.error = `Error occured while parsing RSS Feed ${err.toString()}`;
+              } else {
+                this.feed = parsed;
+              }
+            });
+          } else {
+            this.error = "Error occured while fetching the feed";
+            this.loading = false;
+          }
         }
       } catch (e) {
         if (e.toString() === "TypeError: Failed to fetch") {
@@ -88,8 +104,8 @@ export default {
       if (this.feed.items && this.feed.items) {
         return this.feed.items.slice(0, this.limit);
       }
-    }
-  }
+    },
+  },
 };
 </script>
 
